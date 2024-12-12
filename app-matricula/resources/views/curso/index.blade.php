@@ -1,7 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Cursos') }}
+            <span class="flex flex-row items-center">
+                <span class="iconify mr-2 text-2xl" data-icon="solar:book-bookmark-minimalistic-line-duotone"></span>
+                {{ __('Cursos') }}
+            </span>
         </h2>
     </x-slot>
 
@@ -43,12 +46,38 @@
                                     <tbody class="divide-y divide-gray-200 bg-white">
                                     @foreach ($cursos as $curso)
                                         <tr class="even:bg-gray-50">
-                                            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900">{{ ++$i }}</td>
+                                            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900">
+                                                <span class="flex flex-row items-center">
+                                                    <span class="iconify mr-2 text-xl" data-icon="solar:key-line-duotone"></span>
+                                                    {{ ++$i }}
+                                                </span>
+                                            </td>
 
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $curso->nome }}</td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $curso->descricao }}</td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $curso->carga_horaria }}</td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $curso->ativo }}</td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                            <span class="flex flex-row items-center">
+                                                <span class="iconify mr-2 text-xl" data-icon="solar:book-bookmark-minimalistic-line-duotone"></span>
+                                                {{ $curso->nome }}
+                                            </span>
+                                        </td>
+
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                              <span class="flex flex-row items-center">
+                                                <span class="iconify mr-2 text-xl" data-icon="solar:document-text-line-duotone"></span>
+                                                {{ $curso->descricao }}
+                                            </span>
+                                        </td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                              <span class="flex flex-row items-center">
+                                                <span class="iconify mr-2 text-xl" data-icon="solar:clock-circle-line-duotone"></span>
+                                                {{ $curso->carga_horaria }}
+                                            </span>
+                                        </td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                              <span class="flex flex-row items-center">
+                                                <span class="iconify mr-2 text-xl" data-icon="solar:star-line-duotone"></span>
+                                                {{ $curso->ativo }}
+                                            </span>
+                                        </td>
 
                                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900">
                                                 <form action="{{ route('cursos.destroy', $curso->id) }}" method="POST">
