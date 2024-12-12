@@ -12,7 +12,7 @@
                     <div class="sm:flex sm:items-center">
                         <div class="sm:flex-auto">
                             <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Cursos') }}</h1>
-                            <p class="mt-2 text-sm text-gray-700">Lista de cursos {{ __('Cursos') }}.</p>
+                            <p class="mt-2 text-sm text-gray-700">Lista de {{ __('Cursos') }}.</p>
                         </div>
                         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                             <a type="button" href="{{ route('cursos.create') }}"
