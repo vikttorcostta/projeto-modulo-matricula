@@ -11,7 +11,7 @@
                 <div class="w-full">
                     <div class="sm:flex sm:items-center">
                         <div class="sm:flex-auto">
-                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Mostrar') }} Professor</h1>
+                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Detalhes do ') }} Professor</h1>
                         </div>
                         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                             <a type="button" href="{{ route('professores.index') }}"
@@ -29,25 +29,48 @@
 
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Nome</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $professore->nome }}</dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                        <div class="flex flex-row items-center gap-2">
+                                            <span class="iconify mr-2 text-xl" data-icon="solar:user-circle-line-duotone"></span>
+                                            {{ $professore->nome }}
+                                        </div>
+                                    </dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Sobrenome</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $professore->sobrenome }}</dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                        <div class="flex flex-row items-center gap-2">
+                                            <span class="iconify mr-2 text-xl" data-icon="solar:user-circle-line-duotone"></span>
+                                            {{ $professore->sobrenome }}
+                                        </div>
+                                    </dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Telefone</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $professore->telefone }}</dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                        <div class="flex flex-row items-center gap-2">
+                                            <span class="iconify mr-2 text-xl" data-icon="solar:phone-calling-line-duotone"></span>
+                                            {{ $professore->telefone }}
+                                        </div>
+                                    </dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Email</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $professore->email }}</dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                        <div class="flex flex-row items-center gap-2">
+                                            <span class="iconify mr-2 text-xl" data-icon="solar:letter-line-duotone"></span>
+                                            {{ $professore->email }}
+                                        </div>
+                                    </dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Senha</dt>
                                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                                         @if($professore->senha)
-                                            {{__('* * * * * *')}}
+                                            <div class="flex flex-row items-center gap-2">
+                                                <span class="iconify mr-2 text-xl" data-icon="solar:lock-password-line-duotone"></span>
+                                                {{__('* * * * * *')}}
+                                            </div>
                                         @endif
                                         {{--{{ $professore->senha }}--}}
                                     </dd>

@@ -1,5 +1,10 @@
 <?php
 
+/* CURSO TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS
+ * DISCIPLINA DE DESENVOLVIMENTO DE SISTEMAS
+ * EQUIPE: DAVI CARIDADE, WENDEL, PAULO VICTOR
+ * */
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;

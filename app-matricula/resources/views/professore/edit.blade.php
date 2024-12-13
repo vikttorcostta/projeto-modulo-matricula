@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Editar') }} Professores
+            {{ __('Editar') }} Professor
         </h2>
     </x-slot>
 
@@ -11,7 +11,7 @@
                 <div class="w-full">
                     <div class="sm:flex sm:items-center">
                         <div class="sm:flex-auto">
-                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Editar') }} Professores</h1>
+                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Editar') }} Professore</h1>
                         </div>
                         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                             <a type="button" href="{{ route('professores.index') }}"

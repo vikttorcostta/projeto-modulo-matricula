@@ -11,8 +11,7 @@
                 <div class="w-full">
                     <div class="sm:flex sm:items-center">
                         <div class="sm:flex-auto">
-                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Mostrar') }} Curso</h1>
-                            <p class="mt-2 text-sm text-gray-700">Detalhes do {{ __('Curso') }}.</p>
+                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Detalhes do ') }} Curso</h1>
                         </div>
                         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                             <a type="button" href="{{ route('cursos.index') }}" class="block rounded-md
@@ -30,19 +29,47 @@
 
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Nome</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $curso->nome }}</dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                        <div class="flex flex-row items-center gap-2">
+                                            <span class="iconify mr-2 text-xl" data-icon="solar:book-bookmark-minimalistic-line-duotone"></span>
+                                            {{ $curso->nome }}
+                                        </div>
+                                    </dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Descrição</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $curso->descricao }}</dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                        <div class="flex flex-row items-center gap-2">
+                                            <span class="iconify mr-2 text-xl" data-icon="solar:document-text-line-duotone"></span>
+                                            {{ $curso->descricao }}
+                                        </div>
+                                    </dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Carga Horaria</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $curso->carga_horaria }}</dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                        <div class="flex flex-row items-center gap-2">
+                                            <span class="iconify mr-2 text-xl" data-icon="solar:clock-circle-line-duotone"></span>
+                                            {{ $curso->carga_horaria }}
+                                        </div>
+                                    </dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                    <dt class="text-sm font-medium leading-6 text-gray-900">Ativo</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $curso->ativo }}</dd>
+                                    <dt class="text-sm font-medium leading-6 text-gray-900">Status</dt>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                                        @if($curso->ativo)
+                                            <div class="flex flex-row gap-2 items-center">
+                                                <span class="iconify mr-2 text-xl" data-icon="solar:smile-circle-line-duotone"></span>
+                                                <span>Ativado</span>
+                                            </div>
+                                        @else
+                                            <div class="flex flex-row gap-2 items-center">
+                                                <span class="iconify mr-2 text-xl" data-icon="solar:sad-circle-line-duotone"></span>
+                                                <span>Desativado</span>
+                                            </div>
+                                        @endif
+{{--                                        {{ $curso->ativo }}--}}
+                                    </dd>
                                 </div>
 
                                     </dl>

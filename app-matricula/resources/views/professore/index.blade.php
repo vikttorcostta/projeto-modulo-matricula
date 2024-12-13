@@ -2,11 +2,12 @@
     <x-slot name="header">
        <span class="flex flex-row items-center">
            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <span class="flex flex-row items-center">
-                <span class="iconify mr-2 text-2xl" data-icon="solar:user-circle-line-duotone"></span>
-                {{ __('Professores') }}
-            </span>
-        </h2>
+                <span class="flex flex-row items-center">
+                    <span class="iconify mr-2 text-2xl" data-icon="solar:user-circle-line-duotone"></span>
+                    {{ __('Professores') }}
+                </span>
+          </h2>
+       </span>
     </x-slot>
 
     <div class="py-12">
@@ -77,7 +78,7 @@
                                              </span>
                                         </td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                            <span class="flex flex-row items-center">
+                                            <span class="flex flex-row items-center gap-2">
                                                 <span class="iconify mr-2 text-xl" data-icon="solar:lock-password-line-duotone"></span>
                                                 @if($professore->senha)
                                                     {{__('* * * * * *')}}

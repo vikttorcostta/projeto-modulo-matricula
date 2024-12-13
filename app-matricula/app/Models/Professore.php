@@ -1,5 +1,10 @@
 <?php
 
+/* CURSO TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS
+ * DISCIPLINA DE DESENVOLVIMENTO DE SISTEMAS
+ * EQUIPE: DAVI CARIDADE, WENDEL, PAULO VICTOR
+ * */
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -21,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Professore extends Model
 {
-    
+
     protected $perPage = 20;
 
     /**

@@ -1,5 +1,10 @@
 <?php
 
+/* CURSO TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS
+ * DISCIPLINA DE DESENVOLVIMENTO DE SISTEMAS
+ * EQUIPE: DAVI CARIDADE, WENDEL, PAULO VICTOR
+ * */
+
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 
