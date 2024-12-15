@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CursoRequest extends FormRequest
+class TurmaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,10 @@ class CursoRequest extends FormRequest
     {
         return [
 			'nome' => 'required|string',
-			'descricao' => 'string',
-			'carga_horaria' => 'required',
+			'ano' => 'required',
+			'semestre' => 'required',
+			'id_curso' => 'required',
+			'id_professor' => 'required',
         ];
     }
-
 }

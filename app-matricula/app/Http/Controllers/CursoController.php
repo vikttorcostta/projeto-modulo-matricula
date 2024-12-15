@@ -1,22 +1,20 @@
 <?php
 
-/* CURSO TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS
- * DISCIPLINA DE DESENVOLVIMENTO DE SISTEMAS
- * EQUIPE: DAVI CARIDADE, WENDEL, PAULO VICTOR
- * */
-
 namespace App\Http\Controllers;
 
 use App\Models\Curso;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\CursoRequest;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
 class CursoController extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index(Request $request): View
     {
         $cursos = Curso::paginate();
@@ -25,7 +23,9 @@ class CursoController extends Controller
             ->with('i', ($request->input('page', 1) - 1) * $cursos->perPage());
     }
 
-
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create(): View
     {
         $curso = new Curso();
@@ -33,16 +33,20 @@ class CursoController extends Controller
         return view('curso.create', compact('curso'));
     }
 
-
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(CursoRequest $request): RedirectResponse
     {
         Curso::create($request->validated());
 
         return Redirect::route('cursos.index')
-            ->with('success', 'Curso criado com sucesso!');
+            ->with('success', 'Curso created successfully.');
     }
 
-
+    /**
+     * Display the specified resource.
+     */
     public function show($id): View
     {
         $curso = Curso::find($id);
@@ -50,7 +54,9 @@ class CursoController extends Controller
         return view('curso.show', compact('curso'));
     }
 
-
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit($id): View
     {
         $curso = Curso::find($id);
@@ -58,13 +64,15 @@ class CursoController extends Controller
         return view('curso.edit', compact('curso'));
     }
 
-
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(CursoRequest $request, Curso $curso): RedirectResponse
     {
         $curso->update($request->validated());
 
         return Redirect::route('cursos.index')
-            ->with('success', 'Curso criado com sucesso.');
+            ->with('success', 'Curso updated successfully');
     }
 
     public function destroy($id): RedirectResponse
@@ -72,6 +80,7 @@ class CursoController extends Controller
         Curso::find($id)->delete();
 
         return Redirect::route('cursos.index')
-            ->with('success', 'Curso excluido com sucesso.');
+            ->with('success', 'Curso deleted successfully');
     }
+
 }

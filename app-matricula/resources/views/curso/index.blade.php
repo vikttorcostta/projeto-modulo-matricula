@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <span class="flex flex-row items-center">
-                <span class="iconify mr-2 text-2xl" data-icon="solar:book-bookmark-minimalistic-line-duotone"></span>
+            <div class="flex flex-row items-center gap-2">
+                <x-icon-capelo></x-icon-capelo>
                 {{ __('Cursos') }}
-            </span>
+            </div>
         </h2>
     </x-slot>
 
@@ -21,7 +21,7 @@
                                class="block rounded-md bg-green-600 px-3 py-2
                                text-center text-sm font-semibold text-white shadow-sm
                                hover:bg-green-500 focus-visible:outline focus-visible:outline-2
-                               focus-visible:outline-offset-2 focus-visible:outline-green-600">Novo Curso</a>
+                               focus-visible:outline-offset-2 focus-visible:outline-green-600">Novo</a>
                         </div>
                     </div>
 
@@ -37,7 +37,7 @@
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Descrição</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Carga Horaria</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Ativo</th>
-                                    <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Ações</th>
+                                        <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Ação</th>
 
                                         <th scope="col" class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500"></th>
                                     </tr>
@@ -46,54 +46,57 @@
                                     @foreach ($cursos as $curso)
                                         <tr class="even:bg-gray-50">
                                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900">
-                                                <span class="flex flex-row items-center">
-                                                    <span class="iconify mr-2 text-xl" data-icon="solar:key-line-duotone"></span>
+                                                <div class="flex flex-row items-center gap-2">
+                                                    <x-icon-id></x-icon-id>
                                                     {{ $curso->id }}
-                                                </span>
+                                                </div>
                                             </td>
 
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                            <span class="flex flex-row items-center">
-                                                <span class="iconify mr-2 text-xl" data-icon="solar:book-bookmark-minimalistic-line-duotone"></span>
+                                            <div class="flex flex-row items-center gap-2">
+                                                <x-icon-capelo></x-icon-capelo>
                                                 {{ $curso->nome }}
-                                            </span>
+                                            </div>
                                         </td>
-
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                             <span class="flex flex-row items-center">
-                                                <span class="iconify mr-2 text-xl" data-icon="solar:document-text-line-duotone"></span>
+                                            <div class="flex flex-row items-center gap-2">
+                                                <x-icon-descricao></x-icon-descricao>
                                                 {{ $curso->descricao }}
-                                            </span>
+                                            </div>
                                         </td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                              <span class="flex flex-row items-center">
-                                                <span class="iconify mr-2 text-xl" data-icon="solar:clock-circle-line-duotone"></span>
+                                            <div class="flex flex-row items-center gap-2">
+                                                <x-icon-relogio></x-icon-relogio>
                                                 {{ $curso->carga_horaria }}
-                                            </span>
+                                                <span>Horas</span>
+                                            </div>
                                         </td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                              <span class="flex flex-row items-center">
-                                                  @if($curso->ativo)
-                                                      <span class="iconify mr-2 text-xl" data-icon="solar:smile-circle-line-duotone"></span>
-                                                  @else
-                                                      <span class="iconify mr-2 text-xl" data-icon="solar:sad-circle-line-duotone"></span>
-                                                  @endif
-                                                {{ $curso->ativo ? 'Sim' : 'Não' }}
-                                            </span>
+                                            <div class="flex flex-row items-center gap-2">
+                                                @if($curso->ativo)
+                                                    <x-icon-feliz></x-icon-feliz>
+                                                    {{__('Sim')}}
+                                                @else
+                                                    <x-icon-triste></x-icon-triste>
+                                                    {{__('Não')}}
+                                                    {{--                                            {{ $curso->ativo }}--}}
+                                                @endif
+                                            </div>
                                         </td>
 
                                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900">
-                                                <form class="flex flex-row items-start gap-2" action="{{ route('cursos.destroy', $curso->id) }}" method="POST">
+                                                <form class="flex flex-row items-center gap-2" action="{{ route('cursos.destroy', $curso->id) }}" method="POST">
                                                     <a href="{{ route('cursos.show', $curso->id) }}" class="text-gray-600 font-bold hover:text-gray-900 mr-2">
-                                                        <span class="iconify mr-2 text-xl" data-icon="solar:eye-line-duotone"></span>
+                                                        <x-icon-ver></x-icon-ver>
                                                     </a>
                                                     <a href="{{ route('cursos.edit', $curso->id) }}" class="text-green-600 font-bold hover:text-green-900  mr-2">
-                                                        <span class="iconify mr-2 text-xl" data-icon="solar:pen-new-square-line-duotone"></span>
+                                                        <x-icon-editar></x-icon-editar>
                                                     </a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <a href="{{ route('cursos.destroy', $curso->id) }}" class="text-red-600 font-bold hover:text-red-900" onclick="event.preventDefault(); confirm('Deseja realmente excluir') ? this.closest('form').submit() : false;">
-                                                        <span class="iconify mr-2 text-xl" data-icon="solar:trash-bin-minimalistic-line-duotone"></span>
+                                                    <a href="{{ route('cursos.destroy', $curso->id) }}" class="text-red-600 font-bold
+                                                    hover:text-red-900" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;">
+                                                        <x-icon-excluir></x-icon-excluir>
                                                     </a>
                                                 </form>
                                             </td>

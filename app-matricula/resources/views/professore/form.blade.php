@@ -27,6 +27,6 @@
     </div>
 
     <div class="flex items-center gap-4">
-        <x-primary-button>Salvar</x-primary-button>
+        <x-primary-button>Enviar</x-primary-button>
     </div>
 </div>

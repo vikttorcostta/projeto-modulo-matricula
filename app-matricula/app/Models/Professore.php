@@ -1,10 +1,5 @@
 <?php
 
-/* CURSO TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS
- * DISCIPLINA DE DESENVOLVIMENTO DE SISTEMAS
- * EQUIPE: DAVI CARIDADE, WENDEL, PAULO VICTOR
- * */
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -35,6 +30,12 @@ class Professore extends Model
      * @var array<int, string>
      */
     protected $fillable = ['nome', 'sobrenome', 'telefone', 'email', 'senha'];
+
+    public function turmas ()
+    {
+        return $this->hasMany(Turma::class);
+    }
+
 
 
 }

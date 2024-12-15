@@ -1,12 +1,9 @@
 <?php
 
-/* CURSO TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS
- * DISCIPLINA DE DESENVOLVIMENTO DE SISTEMAS
- * EQUIPE: DAVI CARIDADE, WENDEL, PAULO VICTOR
- * */
-
 namespace App\Models;
 
+use App\Http\Requests\CursoRequest;
+use App\Http\Requests\Icones\CursoIcones;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -25,15 +22,18 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Curso extends Model
 {
-
     protected $perPage = 20;
 
     /**
-     *
+     * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = ['nome', 'descricao', 'carga_horaria', 'ativo'];
 
 
+    public function turmas ()
+    {
+        return $this->hasMany(Turma::class);
+    }
 }

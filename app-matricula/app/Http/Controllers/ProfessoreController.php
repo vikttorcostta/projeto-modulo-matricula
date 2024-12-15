@@ -1,10 +1,5 @@
 <?php
 
-/* CURSO TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS
- * DISCIPLINA DE DESENVOLVIMENTO DE SISTEMAS
- * EQUIPE: DAVI CARIDADE, WENDEL, PAULO VICTOR
- * */
-
 namespace App\Http\Controllers;
 
 use App\Models\Professore;
@@ -16,7 +11,9 @@ use Illuminate\View\View;
 
 class ProfessoreController extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index(Request $request): View
     {
         $professores = Professore::paginate();
@@ -25,6 +22,9 @@ class ProfessoreController extends Controller
             ->with('i', ($request->input('page', 1) - 1) * $professores->perPage());
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create(): View
     {
         $professore = new Professore();
@@ -32,6 +32,9 @@ class ProfessoreController extends Controller
         return view('professore.create', compact('professore'));
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(ProfessoreRequest $request): RedirectResponse
     {
         Professore::create($request->validated());
@@ -40,6 +43,9 @@ class ProfessoreController extends Controller
             ->with('success', 'Professore created successfully.');
     }
 
+    /**
+     * Display the specified resource.
+     */
     public function show($id): View
     {
         $professore = Professore::find($id);
@@ -47,7 +53,9 @@ class ProfessoreController extends Controller
         return view('professore.show', compact('professore'));
     }
 
-
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit($id): View
     {
         $professore = Professore::find($id);
@@ -55,12 +63,15 @@ class ProfessoreController extends Controller
         return view('professore.edit', compact('professore'));
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(ProfessoreRequest $request, Professore $professore): RedirectResponse
     {
         $professore->update($request->validated());
 
         return Redirect::route('professores.index')
-            ->with('success', 'Professor editado com sucesso.');
+            ->with('success', 'Professore updated successfully');
     }
 
     public function destroy($id): RedirectResponse
@@ -68,6 +79,6 @@ class ProfessoreController extends Controller
         Professore::find($id)->delete();
 
         return Redirect::route('professores.index')
-            ->with('success', 'Professor excluido com sucesso.');
+            ->with('success', 'Professore deleted successfully');
     }
 }

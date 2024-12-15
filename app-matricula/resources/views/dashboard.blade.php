@@ -14,6 +14,9 @@
                 <div class="p-6 text-gray-900">
                     {{ __("Bem-vindo (a)") }}
                 </div>
+                <div>
+
+                </div>
             </div>
         </div>
     </div>

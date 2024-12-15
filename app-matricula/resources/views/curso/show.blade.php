@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ $curso->name ?? __('') . " " . __('Curso') }}
+            {{ $curso->name ?? __('Detalhes de ') . " " . __('Curso') }}
         </h2>
     </x-slot>
 
@@ -11,7 +11,7 @@
                 <div class="w-full">
                     <div class="sm:flex sm:items-center">
                         <div class="sm:flex-auto">
-                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Detalhes do ') }} Curso</h1>
+                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Detalhes') }} Curso</h1>
                         </div>
                         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
                             <a type="button" href="{{ route('cursos.index') }}" class="block rounded-md
@@ -29,45 +29,26 @@
 
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Nome</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                                        <div class="flex flex-row items-center gap-2">
-                                            <span class="iconify mr-2 text-xl" data-icon="solar:book-bookmark-minimalistic-line-duotone"></span>
-                                            {{ $curso->nome }}
-                                        </div>
-                                    </dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $curso->nome }}</dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                    <dt class="text-sm font-medium leading-6 text-gray-900">Descrição</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                                        <div class="flex flex-row items-center gap-2">
-                                            <span class="iconify mr-2 text-xl" data-icon="solar:document-text-line-duotone"></span>
-                                            {{ $curso->descricao }}
-                                        </div>
-                                    </dd>
+                                    <dt class="text-sm font-medium leading-6 text-gray-900">Descricao</dt>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $curso->descricao }}</dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Carga Horaria</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                                        <div class="flex flex-row items-center gap-2">
-                                            <span class="iconify mr-2 text-xl" data-icon="solar:clock-circle-line-duotone"></span>
-                                            {{ $curso->carga_horaria }}
-                                        </div>
-                                    </dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $curso->carga_horaria }}</dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Status</dt>
                                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                                        @if($curso->ativo)
-                                            <div class="flex flex-row gap-2 items-center">
-                                                <span class="iconify mr-2 text-xl" data-icon="solar:smile-circle-line-duotone"></span>
-                                                <span>Ativado</span>
-                                            </div>
-                                        @else
-                                            <div class="flex flex-row gap-2 items-center">
-                                                <span class="iconify mr-2 text-xl" data-icon="solar:sad-circle-line-duotone"></span>
-                                                <span>Desativado</span>
-                                            </div>
-                                        @endif
+                                        <div>
+                                            @if($curso->ativo)
+                                                {{__('Ativado')}}
+                                            @else
+                                                {{__('Desativado')}}
+                                            @endif
+                                        </div>
 {{--                                        {{ $curso->ativo }}--}}
                                     </dd>
                                 </div>

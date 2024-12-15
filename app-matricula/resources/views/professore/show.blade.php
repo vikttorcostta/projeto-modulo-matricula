@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ $professore->name ?? __('') . " " . __('Professor') }}
+            {{ $professore->name ?? __('Detalhes do') . " " . __('Professor') }}
         </h2>
     </x-slot>
 
@@ -11,13 +11,13 @@
                 <div class="w-full">
                     <div class="sm:flex sm:items-center">
                         <div class="sm:flex-auto">
-                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Detalhes do ') }} Professor</h1>
+                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Professor') }}</h1>
                         </div>
                         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-                            <a type="button" href="{{ route('professores.index') }}"
-                               class="block rounded-md bg-green-600 px-3 py-2 text-center text-sm font-semibold
-                               text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2
-                               focus-visible:outline-offset-2 focus-visible:outline-green-600">Voltar</a>
+                            <a type="button" href="{{ route('professores.index') }}" class="block rounded-md
+                            bg-green-600 px-3 py-2 text-center text-sm font-semibold
+                            text-white shadow-sm hover:bg-green-500 focus-visible:outline
+                            focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Voltar</a>
                         </div>
                     </div>
 
@@ -29,50 +29,27 @@
 
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Nome</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                                        <div class="flex flex-row items-center gap-2">
-                                            <span class="iconify mr-2 text-xl" data-icon="solar:user-circle-line-duotone"></span>
-                                            {{ $professore->nome }}
-                                        </div>
-                                    </dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $professore->nome }}</dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Sobrenome</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                                        <div class="flex flex-row items-center gap-2">
-                                            <span class="iconify mr-2 text-xl" data-icon="solar:user-circle-line-duotone"></span>
-                                            {{ $professore->sobrenome }}
-                                        </div>
-                                    </dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $professore->sobrenome }}</dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Telefone</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                                        <div class="flex flex-row items-center gap-2">
-                                            <span class="iconify mr-2 text-xl" data-icon="solar:phone-calling-line-duotone"></span>
-                                            {{ $professore->telefone }}
-                                        </div>
-                                    </dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $professore->telefone }}</dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Email</dt>
-                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
-                                        <div class="flex flex-row items-center gap-2">
-                                            <span class="iconify mr-2 text-xl" data-icon="solar:letter-line-duotone"></span>
-                                            {{ $professore->email }}
-                                        </div>
-                                    </dd>
+                                    <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $professore->email }}</dd>
                                 </div>
                                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                                     <dt class="text-sm font-medium leading-6 text-gray-900">Senha</dt>
                                     <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
                                         @if($professore->senha)
-                                            <div class="flex flex-row items-center gap-2">
-                                                <span class="iconify mr-2 text-xl" data-icon="solar:lock-password-line-duotone"></span>
-                                                {{__('* * * * * *')}}
-                                            </div>
+                                            {{__('* * * * * * *')}}
                                         @endif
-                                        {{--{{ $professore->senha }}--}}
+{{--                                        {{ $professore->senha }}--}}
                                     </dd>
                                 </div>
 
