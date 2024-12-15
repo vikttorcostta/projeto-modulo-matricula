@@ -33,7 +33,9 @@
 
     <div class="mb-6">
         <x-input-label for="id_curso" :value="__('Curso')" class="block text-lg font-medium text-gray-700"/>
-        <select id="id_curso" name="id_curso" class="mt-1 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out">
+        <select id="id_curso" name="id_curso" class="mt-1 block w-full px-4 py-2 text-gray-900 border
+         border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500
+         focus:border-green-500 transition duration-150 ease-in-out">
             <option value="">Selecione um curso</option>
             @if($cursos && count($cursos) > 0)
                 @foreach($cursos as $curso)
@@ -50,7 +52,8 @@
 
     <div class="mb-6">
         <x-input-label for="id_professor" :value="__('Professor')" class="block text-lg font-medium text-gray-700"/>
-        <select id="id_professor" name="id_professor" class="mt-1 block w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out">
+        <select id="id_professor" name="id_professor" class="mt-1 block w-full px-4 py-2 text-gray-900 border
+        border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 transition duration-150 ease-in-out">
             <option value="">Selecione um professor</option>
             @if($professores && count($professores) > 0)
                 @foreach($professores as $professor)
@@ -67,6 +70,6 @@
 
 
     <div class="flex items-center gap-4">
-        <x-primary-button>Submit</x-primary-button>
+        <x-primary-button>Enviar</x-primary-button>
     </div>
 </div>
