@@ -12,6 +12,10 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+        <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="120834f2-d089-452f-805f-e9b3c1ad87de";
+            (function(){d=document;s=d.createElement("script");
+                s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+        </script>
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])

@@ -19,6 +19,10 @@
 
     <!-- Tailwind CSS Play CDN (mainly for development/testing purposes) -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="120834f2-d089-452f-805f-e9b3c1ad87de";
+        (function(){d=document;s=d.createElement("script");
+            s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
 
     <!-- Tailwind CSS v3 Configuration -->
     <script>
