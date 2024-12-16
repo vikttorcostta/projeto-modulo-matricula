@@ -308,9 +308,7 @@
 
         <!-- Pricing Section -->
         <div class="bg-white">
-            <div
-                class="container mx-auto space-y-10 px-4 py-16 lg:px-8 lg:py-32 xl:max-w-4xl"
-            >
+            <div class="container mx-auto space-y-10 px-4 py-16 lg:px-8 lg:py-32 xl:max-w-4xl">
                 <!-- Heading -->
                 <div class="flex flex-col items-center gap-4 text-center">
                     <h2 class="mb-4 text-3xl font-black md:text-5xl">
@@ -320,6 +318,12 @@
                     <h3 class="mx-auto text-lg font-medium text-gray-600 md:text-xl md:leading-relaxed lg:w-2/3">
                         DAVI CARIDADE | WENDEL | PAULO VICTOR
                     </h3>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <h4 class="text-2xl">Tecnologias e ferramentas utilizadas</h4>
+                    <div class="flex flex-row items-center gap-2 justify-center">
+                        <img src="https://skillicons.dev/icons?i=phpstorm,php,laravel,git,github,tailwind,mysql,postman" />
+                    </div>
                 </div>
             </div>
         </div>
