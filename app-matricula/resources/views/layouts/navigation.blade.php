@@ -11,7 +11,7 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-5 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Painel') }}
                     </x-nav-link>
@@ -26,6 +26,26 @@
 
                     <x-nav-link :href="route('turmas.index')" :active="request()->routeIs('turmas.index')">
                         {{ __('Turmas') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('enderecos.index')" :active="request()->routeIs('enderecos.index')">
+                        {{ __('Endereços') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('responsaveis.index')" :active="request()->routeIs('responsaveis.index')">
+                        {{ __('Responsáveis') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('acessibilidades.index')" :active="request()->routeIs('acessibilidades.index')">
+                        {{ __('Acessibilidades') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('alunos.index')" :active="request()->routeIs('alunos.index')">
+                        {{ __('Alunos') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('matriculas.index')" :active="request()->routeIs('matriculas.index')">
+                        {{ __('Matrículas') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -99,6 +119,26 @@
 
             <x-responsive-nav-link :href="route('turmas.index')" :active="request()->routeIs('turmas.index')">
                 {{ __('Turmas') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('enderecos.index')" :active="request()->routeIs('enderecos.index')">
+                {{ __('Endereços') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('responsaveis.index')" :active="request()->routeIs('responsaveis.index')">
+                {{ __('Responsáveis') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('acessibilidades.index')" :active="request()->routeIs('acessibilidades.index')">
+                {{ __('Acessibilidades') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('alunos.index')" :active="request()->routeIs('alunos.index')">
+                {{ __('Alunos') }}
+            </x-responsive-nav-link>
+
+            <x-responsive-nav-link :href="route('matriculas.index')" :active="request()->routeIs('matriculas.index')">
+                {{ __('Matrículas') }}
             </x-responsive-nav-link>
         </div>
 

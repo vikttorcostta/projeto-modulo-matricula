@@ -1,9 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <div class="flex flex-row items center gap-2">
-                <x-icon-livro></x-icon-livro>
-                {{ __('Turmas') }}
+            <div class="flex flex-row items-center gap-2">
+                <x-icon-acessibilidade></x-icon-acessibilidade>
+                {{ __('Acessibilidades') }}
             </div>
         </h2>
     </x-slot>
@@ -14,13 +14,13 @@
                 <div class="w-full">
                     <div class="sm:flex sm:items-center">
                         <div class="sm:flex-auto">
-                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Turmas') }}</h1>
+                            <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Acessibilidades') }}</h1>
                         </div>
                         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-                            <a type="button" href="{{ route('turmas.create') }}" class="block rounded-md
-                            bg-green-600 px-3 py-2 text-center text-sm font-semibold
-                            text-white shadow-sm hover:bg-green-500 focus-visible:outline
-                            focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Nova</a>
+                            <a type="button" href="{{ route('acessibilidades.create') }}"
+                               class="block rounded-md bg-green-600 px-3 py-2 text-center text-sm
+                               font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline
+                               focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Nova</a>
                         </div>
                     </div>
 
@@ -33,77 +33,64 @@
                                         <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">ID</th>
 
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Nome</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Ano</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Semestre</th>
-                                        <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Vagas</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Curso</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Professor</th>
-                                        <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Ações</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Tipo</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Descrição</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Prioridade</th>
+                                     <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Ação</th>
 
                                         <th scope="col" class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500"></th>
                                     </tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-200 bg-white">
-                                    @foreach ($turmas as $turma)
+                                    @foreach ($acessibilidades as $acessibilidade)
                                         <tr class="even:bg-gray-50">
                                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900">
                                                 <div class="flex flex-row items-center gap-2">
-                                                    <x-icon-documento></x-icon-documento>
-                                                    {{$turma->id }}
+                                                    <x-icon-id></x-icon-id>
+                                                    {{ $acessibilidade->id }}
                                                 </div>
                                             </td>
 
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                             <div class="flex flex-row items-center gap-2">
-                                                <x-icon-livro></x-icon-livro>
-                                                {{ $turma->nome }}
+                                                <x-icon-nome-deficiencia></x-icon-nome-deficiencia>
+                                                {{ $acessibilidade->nome }}
                                             </div>
                                         </td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                             <div class="flex flex-row items-center gap-2">
-                                                <x-icon-calendario></x-icon-calendario>
-                                                {{ $turma->ano }}
+                                                <x-icon-tipo-deficiencia></x-icon-tipo-deficiencia>
+                                                {{ $acessibilidade->tipo }}
                                             </div>
                                         </td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                             <div class="flex flex-row items-center gap-2">
-                                                <x-icon-bandeira></x-icon-bandeira>
-                                                {{ $turma->semestre }}
+                                                <x-icon-descricao></x-icon-descricao>
+                                                {{ $acessibilidade->descricao }}
                                             </div>
                                         </td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                                <div class="flex flex-row items-center gap-2">
-                                                    <x-icon-vagas></x-icon-vagas>
-                                                    {{ $turma->vagas }}
-                                                </div>
-                                            </td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                             <div class="flex flex-row items-center gap-2">
-                                                <x-icon-capelo></x-icon-capelo>
-                                                {{ $turma->curso->nome }}
-                                            </div>
-                                        </td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                        <div class="flex flex-row items-center gap-2">
-                                                <x-icon-maleta></x-icon-maleta>
-                                                {{ $turma->professor->nome }}
+                                                <x-icon-prioridade></x-icon-prioridade>
+                                                {{ $acessibilidade->prioridade }}
                                             </div>
                                         </td>
 
                                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900">
-                                                <form action="{{ route('turmas.destroy', $turma->id) }}" method="POST">
-                                                    <div class="flex flex-row items-center">
-                                                        <a href="{{ route('turmas.show', $turma->id) }}" class="text-gray-600 font-bold hover:text-gray-900 mr-2">
+                                                <form action="{{ route('acessibilidades.destroy', $acessibilidade->id) }}" method="POST">
+                                                    <div class="flex flex-row items-center gap-2">
+                                                        <a href="{{ route('acessibilidades.show', $acessibilidade->id) }}" class="text-gray-600 font-bold hover:text-gray-900 mr-2">
                                                             <x-icon-ver></x-icon-ver>
                                                         </a>
-                                                        <a href="{{ route('turmas.edit', $turma->id) }}" class="text-green-600 font-bold hover:text-green-900  mr-2">
+                                                        <a href="{{ route('acessibilidades.edit', $acessibilidade->id) }}" class="text-green-600 font-bold hover:text-green-900  mr-2">
                                                             <x-icon-editar></x-icon-editar>
                                                         </a>
                                                         @csrf
                                                         @method('DELETE')
-                                                        <a href="{{ route('turmas.destroy', $turma->id) }}" class="text-red-600 font-bold hover:text-red-900"
-                                                           onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;">
-                                                            <x-icon-excluir></x-icon-excluir>
+                                                        <a href="{{ route('acessibilidades.destroy', $acessibilidade->id) }}"
+                                                           class="text-red-600 font-bold hover:text-red-900" onclick="event.preventDefault();
+                                                       confirm('Are you sure to delete?') ? this.closest('form').submit() : false;">
+                                                           <x-icon-excluir></x-icon-excluir>
                                                         </a>
                                                     </div>
                                                 </form>
@@ -114,7 +101,7 @@
                                 </table>
 
                                 <div class="mt-4 px-4">
-                                    {!! $turmas->withQueryString()->links() !!}
+                                    {!! $acessibilidades->withQueryString()->links() !!}
                                 </div>
                             </div>
                         </div>
