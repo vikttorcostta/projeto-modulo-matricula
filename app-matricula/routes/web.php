@@ -79,6 +79,7 @@ Route::get('/dashboard', function () {
     );
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
 Route::middleware('auth')->group(function () {
 
     // perfil
@@ -160,5 +161,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/alunos/{acessibilidade}', [AlunoController::class, 'destroy'])->name('alunos.destroy');
 
 });
+
+//Route::middleware('');
 
 require __DIR__.'/auth.php';

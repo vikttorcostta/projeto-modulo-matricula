@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * Class Professore
@@ -19,17 +21,25 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Professore extends Model
+class Professore extends Authenticatable
 {
 
-    protected $perPage = 20;
+    use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = ['nome', 'sobrenome', 'telefone', 'email', 'senha'];
+    protected $table = 'professores';
+
+    protected $fillable = [
+        'nome', 'sobrenome', 'email', 'senha',
+    ];
+
+    protected $hidden = [
+        'senha',
+    ];
+
+    public function setSenhaAttribute($value)
+    {
+        $this->attributes['senha'] = bcrypt($value);
+    }
 
     public function turmas ()
     {

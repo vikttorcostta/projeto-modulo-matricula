@@ -3,6 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * Class Aluno
@@ -29,9 +32,12 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Aluno extends Model
+class Aluno extends Authenticatable
 {
-    
+    use HasFactory;
+    use Notifiable;
+
+    protected $table = 'alunos';
     protected $perPage = 20;
 
     /**
@@ -39,7 +45,29 @@ class Aluno extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['nome', 'sobrenome', 'data_nascimento', 'telefone', 'email', 'senha', 'sexo', 'cpf', 'rg', 'id_responsavel', 'id_acessibilidade', 'id_endereco'];
+    protected $fillable = [
+        'nome',
+        'sobrenome',
+        'data_nascimento',
+        'telefone',
+        'email',
+        'senha',
+        'sexo',
+        'cpf',
+        'rg',
+        'id_responsavel',
+        'id_acessibilidade',
+        'id_endereco'
+    ];
+
+    protected $hidden = [
+        'senha',
+    ];
+
+    public function setSenhaAttribute($value)
+    {
+        $this->attributes['senha'] = bcrypt($value);
+    }
 
 
     /**
@@ -49,7 +77,7 @@ class Aluno extends Model
     {
         return $this->belongsTo(\App\Models\Acessibilidade::class, 'id_acessibilidade', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -57,7 +85,7 @@ class Aluno extends Model
     {
         return $this->belongsTo(\App\Models\Endereco::class, 'id_endereco', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -65,5 +93,5 @@ class Aluno extends Model
     {
         return $this->belongsTo(\App\Models\Responsavei::class, 'id_responsavel', 'id');
     }
-    
+
 }
