@@ -72,7 +72,7 @@
                         </a>
                     </nav>
                     @if (Route::has('login'))
-                        <nav class="-mx-3 flex flex-1 justify-end gap-4">
+                        <nav class="-mx-3 flex flex-1 justify-center gap-4">
                             @auth
                                 <a
                                     href="{{ url('/dashboard') }}"
